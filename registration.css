@@ -1,3 +1,5 @@
+/* import google font */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 body{
     margin-right: 0;
@@ -8,6 +10,7 @@ body{
     text-align: center;
     color:black;
     margin-top: 10px;
+    font-family: 'lora', serif;
 }
 .container{
     display: flex;
@@ -16,6 +19,7 @@ body{
     background-color:slategray;
     width: 30%;
     border-radius: 10%;
+    
 }
  input[type=submit]{
     margin-left: 50%;
@@ -28,4 +32,5 @@ footer{
     display: flex;
     margin-bottom: -10px;
     justify-content: center;
+    font-family: 'lora', serif;
 }
