@@ -17,18 +17,20 @@
 
           <div class="alert alert-success">
                You are now logged in!
-          </div>s
+          </div>
 
           <h3>Welcome, Ibukun</h3>
 
           <a href="#" class="logout">logout</a>
           
           <div class="alert alert-warning">
-              You need to vrrify your account.
+              You need to verify your account.
               Sign in to your email account and click on the 
               verification link we just emailed you at
               <strong>hibeeeekay@gmail.com</strong>
           </div>
+
+          <button class="btn btn-block btn-lg btn-primary">I am verified</button>
        </div>
     </div>
   </div>
