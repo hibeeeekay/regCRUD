@@ -19,13 +19,13 @@
    
         <div class="top">
           <form method="post" action="signup.php">
-             <tr><th>First name</th><td><input type="text" name="First" class="form-control form-control-sm border border-primary" required></tr> 
-             <tr><th>Last name</th><td><input type="text" name="lastname" class="form-control form-control-sm border border-primary " required></tr>
-             <tr><th>Email</th><td><input type="email" name="email" class="form-control form-control-sm border border-primary" required></tr>
-             <tr><th>Number</th><td><input type="number" name="number" class="form-control form-control-sm border border-primary" required></tr>
+             <tr><th>First name</th><td><input type="text" name="Firstname" value="<? echo $firstname; ?>"  class="form-control form-control-sm border border-primary" required></tr> 
+             <tr><th>Last name</th><td><input type="text" name="lastname" value="<? echo $lastname; ?>" class="form-control form-control-sm border border-primary " required></tr>
+             <tr><th>Email</th><td><input type="email" name="email" value="<? echo $email; ?>"class="form-control form-control-sm border border-primary" required></tr>
+             <tr><th>Number</th><td><input type="number" name="number" value="<? echo $number; ?>" class="form-control form-control-sm border border-primary" required></tr>
              <tr><th>Password</th><td><input type="password" name="password"class="form-control form-control-sm border border-primary"  required></tr>
-             <tr><th>Confirm Password</th><td><input type="password" name="password conf"class="form-control form-control-sm border border-primary"  required></tr>
-             <tr><td colspan="2" ><input type="submit" name="signup" class="btn btn-primary" value="signup" ></td></tr>
+             <tr><th>Confirm Password</th><td><input type="password" name="password-conf"class="form-control form-control-sm border border-primary"  required></tr>
+             <tr><td colspan="2" ><input type="submit" name="signup-btn" class="btn btn-primary" value="signup" ></td></tr>
           </form>
         </div>  
      </table>  
