@@ -16,10 +16,21 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 2em;
-    background-color:slategray;
+    background-color:#80ced7;
     width: 30%;
     border-radius: 10%;
     
+}
+.form-div{
+    margin:50px auto 50px;
+    padding:25px 15px 10px 15px;
+    border: 1px solid #80ced7;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-family: 'lora', serif;
+}
+.logout{
+    color: red;
 }
  input[type=submit]{
     margin-left: 50%;
