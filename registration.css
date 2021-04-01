@@ -41,7 +41,7 @@ input[type=text],[type=email], [type=number], [type=password]{
 }
 footer{
     display: flex;
-    margin-bottom: -10px;
+    margin-top: 7%;
     justify-content: center;
     font-family: 'lora', serif;
 }
