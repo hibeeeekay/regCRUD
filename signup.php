@@ -18,7 +18,7 @@
      <table cellpadding="10" >
    
         <div class="top">
-          <form method="post" action="validate.php">
+          <form method="post" action="signup.php">
              <tr><th class="text-light">First name</th><td><input type="text" name="First" class="form-control form-control-sm border border-primary" required></tr> 
              <tr><th class="text-light">Last name</th><td><input type="text" name="lastname" class="form-control form-control-sm border border-primary " required></tr>
              <tr><th class="text-light">Email</th><td><input type="email" name="email" class="form-control form-control-sm border border-primary" required></tr>
@@ -31,7 +31,7 @@
      </table>  
     </div> 
   
-  <p class="text-center" >Already have an account?<a href="signin.php">Sign in</a></p>
+  <p class="text-center" >Already a member ?<a href="signin.php">Sign in</a></p>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

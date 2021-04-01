@@ -18,7 +18,7 @@
   <table cellpadding="10" >
 
      <div class="top">
-       <form method="post" action="validate.php">
+       <form method="post" action="signin.php">
           <tr><th class="text-light">Email</th><td><input type="email" name="email" class="form-control form-control-sm border border-primary" required></tr>
           <tr><th class="text-light">Password</th><td><input type="password" name="password"class="form-control form-control-sm border border-primary"  required></tr>
   
