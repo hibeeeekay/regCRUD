@@ -1,3 +1,8 @@
+<?php 
+  require_once 'controllers/authController.php';
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,24 +19,35 @@
 <h3 class="text-center">Sign up</h3>  
  
     <div class="container ">
-  
-     <table cellpadding="10" >
-   
-        <div class="top">
-          <form method="post" action="signup.php">
-             <tr><th>First name</th><td><input type="text" name="Firstname" value="<? echo $firstname; ?>"  class="form-control form-control-sm border border-primary" required></tr> 
-             <tr><th>Last name</th><td><input type="text" name="lastname" value="<? echo $lastname; ?>" class="form-control form-control-sm border border-primary " required></tr>
-             <tr><th>Email</th><td><input type="email" name="email" value="<? echo $email; ?>"class="form-control form-control-sm border border-primary" required></tr>
-             <tr><th>Number</th><td><input type="number" name="number" value="<? echo $number; ?>" class="form-control form-control-sm border border-primary" required></tr>
-             <tr><th>Password</th><td><input type="password" name="password"class="form-control form-control-sm border border-primary"  required></tr>
-             <tr><th>Confirm Password</th><td><input type="password" name="password-conf"class="form-control form-control-sm border border-primary"  required></tr>
-             <tr><td colspan="2" ><input type="submit" name="signup-btn" class="btn btn-primary" value="signup" ></td></tr>
-          </form>
-        </div>  
-     </table>  
+        <div class="row">
+           <div class="col-md-4 offset_md_4 form.div">
+             <form action="signup.php" method="post">
+               <h3 class=" text-center"> Register</h3>
+             <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" value="<?php echo $username; ?>" class="form-control form-control-lg "> 
+             </div>
+             <div class="form-group"> 
+             <label for="email">Email</label> 
+                <input type="email" name="email" value="<?php echo $Email; ?>" class="form-control form-control-lg " >
+             </div>
+             <div class="form-group">
+               <label for="password">Password</label> 
+                 <input type="password" name="password"class="form-control form-control-lg " >
+             </div>
+             <div class="form-group">
+                <label for="passwordConf">Confirm password</label> 
+                 <input type="password" name="passwordConf"class="form-control form-control-lg "> 
+             </div>
+             <div class="form-group">
+                <button type="submit" name="signup-btn" class="btn btn-primary btn-block btn-lg" value="signup" >Sign up</button>
+             </div>
+            </form>
+          </div>
+        </div>
     </div> 
   
-  <h6 class="text-center" >Already a member ? <a href="signin.php">Sign in</a></h6>
+  <p class="text-center" >Already a member ? <a href="signin.php">Sign in</a></p>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
