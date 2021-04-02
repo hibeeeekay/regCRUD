@@ -1,26 +1,6 @@
 /* import google font */
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
-body{
-    margin-right: 0;
-    width: 100%;
-    height: auto;
-}
-.text-center{
-    text-align: center;
-    color:black;
-    margin-top: 10px;
-    font-family: 'lora', serif;
-}
-.container{
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
-    background-color:#80ced7;
-    width: 30%;
-    border-radius: 10%;
-    
-}
 .form-div{
     margin:50px auto 50px;
     padding:25px 15px 10px 15px;
@@ -29,6 +9,10 @@ body{
     font-size: 1.1em;
     font-family: 'lora', serif;
 }
+
+.form-control:focus{
+    box-shadow: none;
+}
 .logout{
     color: red;
 }
@@ -36,9 +20,7 @@ body{
     margin-left: 50%;
     cursor: pointer;
 }
-input[type=text],[type=email], [type=number], [type=password]{
-   color: white;
-}
+
 footer{
     display: flex;
     margin-top: 7%;
