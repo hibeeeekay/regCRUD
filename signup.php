@@ -25,8 +25,10 @@
                <!--If there are errors at all-->
                <?php if(count($errors) > 0): ?>
                <div class="alert alert-danger">
-                 <li>Username required</li>
-               </div>
+                  <?php foreach($errors as $error): ?>
+                  <li><?php echo $error; ?></li>
+                  <?php endforeach; ?>
+                </div>
                <?php endif; ?>
              
                <div class="form-group">
