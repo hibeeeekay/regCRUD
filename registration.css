@@ -13,12 +13,11 @@
 .form-control:focus{
     box-shadow: none;
 }
+.form-div.login {
+   margin-top: 100px;
+}
 .logout{
     color: red;
-}
- input[type=submit]{
-    margin-left: 50%;
-    cursor: pointer;
 }
 
 footer{

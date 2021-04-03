@@ -4,49 +4,41 @@ session_start();
 require 'config/db.php';
 
 $errors = array();
-$Firstname = '';
-$Lastname = '';
-$Email = '';
-$Number = '';
+$username = '';
+$email= '';
 
 //if users clicks on the signup button
 if(isset($_POST['signup-btn'])){
-    $Firstname = $_POST['firstname'];
-    $Lastname =  $_POST['lastname'];
-    $Email =  $_POST['email'];
-    $Number =  $_POST['number'];
-    $Password =  $_POST['password'];
-    $PasswordConf =  $_POST['password-conf'];
+    $username = $_POST['username'];
+    $email =  $_POST['email'];
+    $password =  $_POST['password'];
+    $passwordConf =  $_POST['passwordConf'];
+   
 
    //validation
-   if(empty($Firstname)){
-    $errors['firstname'] = "firstname required";
+   if(empty($username)){
+    $errors['username'] = "username required";
   }
-  if(empty($Lastname)){
-    $errors['lastname'] = "lastname required";
-  }
-  if(!filter_var($Email, FILTER_VALIDATE_EMAIL)){
+  if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
     $errors['email'] = "Email address is invalid";
   }
   if(empty($email)){
     $errors['email'] = "email required";
   }
-  if(empty($Number)){
-    $errors['Number'] = "number required";
-  }
-  if(empty($Password)){
-    $errors['password'] = "firstname required";
+  
+  if(empty($password)){
+    $errors['password'] = "Password required";
   }
 
-  if($Password !== $PasswordConf){
+  if($password !== $passwordConf){
     $errors['password'] = "The two password do not match";
   }
 
 
     //To know if users did not signup with the same email
-    $emailQuery = "SELECT * FROM user WHERE email=? LIMIT 1";
+    $emailQuery = "SELECT * FROM users WHERE email=? LIMIT 1";
     $stmt = $conn->prepare($emailQuery);
-    $stmt->bind_param('s', $Email);
+    $stmt->bind_param('s', $email);
     $stmt->execute();
     $result = $stmt->get_result();
     $userCount = $result->num_rows;
@@ -58,23 +50,23 @@ if(isset($_POST['signup-btn'])){
 
     //Encryption of password
     if(count($errors) === 0){
-      $password = password_hash($Password, PASSWORD_DEFAULT);
+      $password = password_hash($password, PASSWORD_DEFAULT);
       $token = bin2hex(random_bytes(50));
       $verified = false;
 
-      $sql ="INSERT INTO user (Firstname, Lastname, Email, Number, Verified, Token, Password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+      $sql ="INSERT INTO users (username, email, verified,token, Password) VALUES ( ?, ?, ?, ?, ?)";
       $stmt = $conn->prepare($sql);
-      $stmt->bind_param('ssssbss',$Firstname, $Lastname, $Email, $Number, $Verified, $Token, $Password );
+      $stmt->bind_param('ssbss',$username, $email, $verified, $token, $password);
       
       if ($stmt->execute()) {
          //login
       $user_id = $conn->insert_id;
       $_SESSION['id'] = $user_id;
-      $_SESSION['Firstname'] = $Firstname;
-      $_SESSION['Lastname'] = $Lastname;
-      $_SESSION['Email'] = $Email;
-      $_SESSION['Number'] = $Number;
-      $_SESSION['Verified'] = $Verified;
+      $_SESSION['username'] = $username;
+      $_SESSION['email'] = $email;
+      $_SESSION['verified'] = $verified;
+      $_SESSION['token'] = $token;
+      $_SESSION['password'] = $password;
       //Set flash message
       $_SESSION['message'] = "You are now logged in!";
       $_SESSION['alert_class'] = "alert-success";
