@@ -27,7 +27,7 @@
           <a href="#" class="logout">logout</a>
           
           <!--If not verified-->
-          <?php if(!$_SESSION['verified']:) ?>
+          <?php if(!$_SESSION['verified']): ?>
              <div class="alert alert-warning">
                  You need to verify your account.
                  Sign in to your email account and click on the 
@@ -37,7 +37,7 @@
           <?php endif; ?>
 
           <!--If verified-->
-          <?php if(!$_SESSION['verified']:) ?>
+          <?php if(!$_SESSION['verified']): ?>
            <button class="btn btn-block btn-lg btn-primary">I am verified</button>
           <?php endif; ?>
       </div>
