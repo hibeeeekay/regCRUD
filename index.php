@@ -18,23 +18,29 @@
     <div class="row">
        <div class="col-md-4 offset-md-4 form-div">
 
-          <div class="alert alert-success">
-               You are now logged in!
+          <div class="alert <?php echo $_SESSION['alert-class']; ?>">
+               <?php echo $_SESSION['message']; ?>
           </div>
 
-          <h3>Welcome, Ibukun</h3>
+          <h3>Welcome, <?php echo $_SESSION['username']; ?></h3>
 
           <a href="#" class="logout">logout</a>
           
-          <div class="alert alert-warning">
-              You need to verify your account.
-              Sign in to your email account and click on the 
-              verification link we just emailed you at
-              <strong>hibeeeekay@gmail.com</strong>
-          </div>
+          <!--If not verified-->
+          <?php if(!$_SESSION['verified']:) ?>
+             <div class="alert alert-warning">
+                 You need to verify your account.
+                 Sign in to your email account and click on the 
+                 verification link we just emailed you at
+              <strong><?php echo $_SESSION['email']; ?></strong>
+             </div>
+          <?php endif; ?>
 
-          <button class="btn btn-block btn-lg btn-primary">I am verified</button>
-       </div>
+          <!--If verified-->
+          <?php if(!$_SESSION['verified']:) ?>
+           <button class="btn btn-block btn-lg btn-primary">I am verified</button>
+          <?php endif; ?>
+      </div>
     </div>
   </div>
   <p class="text-center" >Already a member ?<a href="signin.php">Sign in</a></p>
