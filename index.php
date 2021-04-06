@@ -1,5 +1,11 @@
 <?php
-   require_once 'controllers/authController.php'
+   require_once 'controllers/authController.php';
+
+
+   if (!isset($_SESSION['id'])) {
+      header('location: login.php');
+      exit();
+   }
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,13 +24,19 @@
     <div class="row">
        <div class="col-md-4 offset-md-4 form-div">
 
+          <?php if(isset($_SESSION['message'])): ?>
           <div class="alert <?php echo $_SESSION['alert-class']; ?>">
-               <?php echo $_SESSION['message']; ?>
+               <?php
+                  echo $_SESSION['message'];
+                  unset($_SESSION['message']);
+                  unset($_SESSION['alert-class']);
+              ?>
           </div>
+          <?php endif; ?>
 
           <h3>Welcome, <?php echo $_SESSION['username']; ?></h3>
 
-          <a href="#" class="logout">logout</a>
+          <a href="index.php?logout=1" class="logout">logout</a>
           
           <!--If not verified-->
           <?php if(!$_SESSION['verified']): ?>
@@ -43,7 +55,7 @@
       </div>
     </div>
   </div>
-  <p class="text-center" >Already a member ?<a href="signin.php">Sign in</a></p>
+  
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
