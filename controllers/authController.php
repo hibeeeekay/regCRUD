@@ -42,7 +42,7 @@ if(isset($_POST['signup-btn'])){
     $stmt->execute();
     $result = $stmt->get_result();
     $userCount = $result->num_rows;
-    $stmt->close();
+    
 
     if ($userCount > 0) {
       $errors['email'] = "email already exist";
