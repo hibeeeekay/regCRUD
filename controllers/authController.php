@@ -56,7 +56,7 @@ if(isset($_POST['signup-btn'])){
 
       $sql ="INSERT INTO users (username, email, verified,token, Password) VALUES ( ?, ?, ?, ?, ?)";
       $stmt = $conn->prepare($sql);
-      $stmt->bind_param('sssss',$username, $email, $verified, $token, $password);
+      $stmt->bind_param('ssdss',$username, $email, $verified, $token, $password);
       
       if ($stmt->execute()) {
          //login
