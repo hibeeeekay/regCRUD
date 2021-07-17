@@ -4,8 +4,6 @@ define('DB_USER', 'r3h2dtMIhE');
 define('DB_PASS', '992AANkodJ');
 define('DB_NAME', 'r3h2dtMIhE');
 
-define('EMAIL', 'hibeeeekay@gmail.com');
-define('PASSWORD', 'incrediblechoice');
 
 //define('DB_HOST', '127.0.0.1');
 //define('DB_USER', 'root');
